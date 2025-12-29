@@ -1,10 +1,8 @@
-def call() {
-    sh '''
-        dependency-check.sh \
-          --project "Wanderlust-Mega-Project" \
-          --scan . \
-          --format HTML \
-          --out dependency-check-report \
-          --disableAssembly
-    '''
+def owasp_dependency() {
+    dependencyCheck additionalArguments: '''
+        --scan .
+        --disableAssembly
+    ''',
+    odcInstallation: 'OWASP-Dependency-Check',
+    outdir: 'dependency-check-report'
 }
