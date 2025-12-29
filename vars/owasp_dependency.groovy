@@ -1,4 +1,4 @@
-def owasp_dependency() {
+def call() {
     dependencyCheck additionalArguments: '''
         --scan .
         --disableAssembly
